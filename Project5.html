@@ -1,0 +1,134 @@
+<html><head><style>body {
+   color: black;
+}
+</style></head><body><h2 id="project-5">Project 5</h2>
+<h3 id="sentiment-analysis-using-nlp">Sentiment Analysis using NLP</h3>
+<h3 id="what-is-natural-language-processing-nlp-">What is Natural Language Processing (NLP)?</h3>
+<ul>
+<li>A crash course in <a href="https://www.youtube.com/watch?v=fOvTtapxa9c">NLP</a></li>
+<li>Not to be confused with Neuro-linguistic programming or nonlinear programming.</li>
+<li>NLP is a subfield of linguistics, computer science, information engineering, and artificial intelligence. </li>
+<li>It is concerned with the interactions between computers and human (natural) languages.</li>
+<li>NLP is a way for computers to analyze, understand, and derive meaning from human language in a smart and useful way.</li>
+<li>NLP breaks down the process of understanding into small chunks.</li>
+<li>Build a NLP pipeline (The 3 stages of an NLP pipeline are: Text Processing &gt; Feature Extraction &gt; Modeling)</li>
+<li>In a nutshell, NLP is applying machine learning models to text and language.</li>
+</ul>
+<h3 id="nlp-pipeline">NLP Pipeline</h3>
+<ul>
+<li>Text Processing<ul>
+<li><a href="https://www.youtube.com/watch?v=pqheVyctkNQ">TP</a></li>
+</ul>
+</li>
+<li>Feature Extraction<ul>
+<li><a href="https://www.youtube.com/watch?v=UgENzCmfFWE&amp;feature=emb_logo">FE</a></li>
+</ul>
+</li>
+<li>Modeling<ul>
+<li>It includes designing a statistical or machine learning model, fitting its parameters to training data, using an optimization procedure, and then using it to make predictions about unseen data.</li>
+<li>The nice thing about working with numerical features is that it allows you to choose from all machine learning models or even a combination of them.</li>
+</ul>
+</li>
+</ul>
+<h3 id="nlp-in-action">NLP in Action</h3>
+<ul>
+<li>Use NLP on a text review to predict if the review is a good one or a bad one. </li>
+<li>Use NLP on an article to predict some categories of the articles you are trying to segment. </li>
+<li>Use NLP on a book to predict the genre of the book. </li>
+<li>Use NLP to build a machine translator or a speech recognition system</li>
+<li>Most NLP algorithms are classification models, and they include Logistic Regression, Naive Bayes, KNN, SVM, Random Forest, Decision Trees.</li>
+</ul>
+<h3 id="what-is-sentiment-analysis">What is Sentiment Analysis</h3>
+<ul>
+<li>Sentiment analysis refers to analyzing an opinion or feelings about something using data like text or images, video or any unstructured data.</li>
+<li>It helps companies in their decision-making process.</li>
+<li>If public sentiment towards a product is not so good, a company may try to modify the product or stop the production altogether in order to avoid any losses.<ul>
+<li>e.g. twitter feeds, product reviews</li>
+</ul>
+</li>
+</ul>
+<h3 id="representing-text-into-numeric-form">Representing Text into Numeric Form</h3>
+<ul>
+<li>Statistical algorithms require data in mathematical form to train the machine learning models.</li>
+<li>Text data needs to be converted into some numeric form to be used in training the machine learning models</li>
+<li>Two main approaches to convert text to numbers<ul>
+<li>Bag of words</li>
+<li>TF- IDF (Term frequency and Inverse Document frequency)</li>
+</ul>
+</li>
+</ul>
+<h3 id="bag-of-words-model">Bag of Words Model</h3>
+<ul>
+<li>Treats each document as an unordered collection or bag of words</li>
+<li>To obtain a bag of words from a piece of text apply text processing steps such as cleaning, identifying stop words, normalizing, stemming, lemmatization etc.</li>
+<li>Turn each document into a vector of numbers representing how many times each word occurs in the document</li>
+<li>A set of documents is called a corpus</li>
+<li>This corpus gives the context for the vectors to be calculated</li>
+<li>Collect all the unique words present in the corpus to build the vocabulary</li>
+<li>Arrange them in some order and create a table like structure where each word is a column and each document is a row</li>
+<li>Count the number of occurrences of each word in each document called Document Term Matrix</li>
+<li>This approach treats every word as equally important</li>
+</ul>
+<h3 id="tf-idf-model">TF-IDF Model</h3>
+<ul>
+<li>TF-IDF is a combination of two terms:<ul>
+<li>Term frequency </li>
+<li>Inverse Document frequency</li>
+</ul>
+</li>
+<li>TF  = (Frequency of a word in the document)/(Total words in the document) </li>
+<li>IDF = Log((Total number of docs)/(Number of docs containing the word))</li>
+<li>The idea behind the TF-IDF approach is that the words that occur less in all the documents and more in individual document contribute more towards classification.</li>
+<li>Basically in this approach you assign weights to words that signify their relevance in documents</li>
+</ul>
+<h3 id="what-are-we-doing-in-this-project">What are we doing in this Project</h3>
+<ul>
+<li>We will work with 2 different datasets in this project<ul>
+<li>Restaurants Reviews (code provided to you, part 1)</li>
+<li>Review and Liked</li>
+</ul>
+</li>
+<li>Another dataset (do it on your own, Part 2)</li>
+<li>Clean texts to prepare them for the Machine Learning models</li>
+<li>Get rid of punctuation, numbers and all non useful words</li>
+<li>Perform stemming which is keeping the root word</li>
+<li>Convert all the words into lower case</li>
+<li>Create a Bag of Words model<ul>
+<li>Perform tokenization to create a sparse matrix</li>
+<li>Take all the different (single instance)words from the cleaned up data</li>
+<li>Each word will have its own column</li>
+<li>Rows are for all the reviews and columns correspond to all the words  and the cells will contain the number of times that word appears in the row.</li>
+<li>A matrix containing a lot of zeros  also called sparse matrix  and the phenomenon is called sparsity</li>
+</ul>
+</li>
+<li>Create a TF-IDF model</li>
+<li>Apply Various Machine Learning Classification Models to both Bag of Words and TF-IDF<ul>
+<li>Naïve Bayes Model</li>
+<li>K-Nearest Neighbors (KNN)</li>
+<li>Support Vector Machine (SVM)</li>
+<li>Decision Trees </li>
+<li>Random Forest</li>
+</ul>
+</li>
+<li>Predict whether a review is positive (1) or negative (2) so basically perform classification</li>
+<li>Train the independent variable  (matrix of all the words) to predict dependent variable (outcome variable Liked)</li>
+<li>Create Confusion matrix and all the four performance metrics</li>
+<li>Compare the various models on both the approaches.</li>
+</ul>
+<h3 id="performance-metrics">Performance Metrics</h3>
+<ul>
+<li>Accuracy = (TP + TN) / (TP + TN + FP + FN) </li>
+<li>Precision (measuring exactness) = TP / (TP + FP)</li>
+<li>Recall (measuring completeness) = TP / (TP + FN)</li>
+<li>F1 Score (compromise between precision and recall)= 2 <em>(Precision </em> Recall )/ (Precision + Recall)</li>
+</ul>
+<h3 id="deliverable">Deliverable</h3>
+<ul>
+<li>The project is spread over 2 weeks </li>
+<li>Code in HTML format and the dataset is provided to you.</li>
+<li>Submission will be done via Blackboard  </li>
+<li>Make sure you answer all the questions in the notebook itself</li>
+<li>Complete the code and Submit the Jupyter notebook/Lab/HTML file with answers to all the questions </li>
+<li>Due date: Apri 17, 2022</li>
+</ul>
+</body></html>
